@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Tomato Leaf Disease Detection</title>
+
+    <style>
+        body {
+            background-color: #e8ede4; /* Light, pleasant background color */
+            font-family: Arial, sans-serif;
+        }
+
+        header, footer {
+            background-color: #8cc63f;
+            padding: 30px;
+            color: white;
+        }
+
+        header h1 {
+            text-align: left;
+            margin-left: 0px;
+        }
+
+        footer {
+            text-align: center;
+        }
+
+        .border img {
+            border-radius: 15px;
+            border: 2px solid rgb(252, 255, 252);
+        }
+
+        .container {
+            padding: 40px;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .col-sm {
+            flex: 1;
+            margin: 10px;
+        }
+
+        .col-sm img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+        }
+
+        h2 {
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .content-h1 {
+            padding: 10px;
+            background-color: rgb(134, 206, 101);
+            color: white;
+            text-align: center;
+            margin-bottom: 10px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Tomato Leaf Disease Detection</h1>
+    </header>
+
+    <div class="container my-2">
+        <div class="row mb-5">
+
+            <div class="col-sm" style="margin-bottom: 23px;">
+                <span class="border border-primary">
+                    <img src="{{url_for('static',filename = 'images/Tomato___Bacterial_spot.JPG')}}" alt="User Image">
+                </span>
+            </div>
+
+            <div class="col-sm">
+                <div>
+                    <h1 class="content-h1">
+                        {{pred_output}}
+                    </h1>
+                </div>
+                <div class="details">
+                    <h2><b>Treatment:</b></h2>
+                    <p>
+                        Copper fungicides are the most commonly recommended treatment for bacterial leaf spot. Use copper fungicide as a preventive measure after you’ve planted your seeds but before you’ve moved the plants into their permanent homes. You can use copper fungicide spray before or after a rain, but don’t treat with copper fungicide while it is raining. If you’re seeing signs of bacterial leaf spot, spray with copper fungicide for a seven- to 10-day period, then spray again for one week after plants are moved into the field.
+                        <br>
+                        Perform maintenance treatments every 10 days in dry weather and every five to seven days in rainy weather.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        Developed by Chandrabhushan
+    </footer>
+
+</body>
+
+</html>

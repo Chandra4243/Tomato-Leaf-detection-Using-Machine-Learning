@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tomato Leaf Disease Detection</title>
+    <style>
+        /* Include the CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e5f0ee;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #8cc63f;
+            padding: 40px;
+            text-align: left;
+            color: #fff;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            flex-wrap: wrap; /* Added for responsiveness */
+            justify-content: center; /* Center the content horizontally */
+            padding: 20px;
+        }
+
+        .left, .right {
+            flex: 1;
+            padding: 30px;
+        }
+
+        .left {
+            border-right: 3px solid #444;
+        }
+
+        .left h2, .right h2 {
+            color: #8cc63f;
+        }
+
+        .left p {
+            margin-bottom: 30px;
+        }
+
+        .left ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .left ul li {
+            margin-bottom: 20px;
+        }
+
+        .right {
+            display: flex;
+            flex-direction: column; 
+            align-items: center;
+            padding: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        .upload {
+            display: block;
+            width: 100%;
+            max-width: 300px;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #8cc63f;
+            border-radius: 4px;
+            background-color: #222121;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            max-width: 300px;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #8cc63f;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        p, li {
+            color: #222121;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #6a8f34;
+        }
+
+        footer {
+            background-color: #8cc63f;
+            padding: 8px;
+            text-align: center;
+            color: #fff;
+        }
+
+        /* Media Queries for responsiveness */
+        @media screen and (max-width: 600px) {
+            .left, .right {
+                flex-basis: 100%; /* Set flex-basis to 100% for smaller screens */
+                border: none; /* Remove border for smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tomato Leaf Disease Detection</h1>
+    </header>
+    <main>
+        <div class="left">
+            <h2>Plant Disease Diagnosis</h2>
+            <p>Is your plant affected by an unknown disease? <br> Don't Worry <span>😊</span></p>
+            <ul>
+                <li>📷 Upload the infected part of your plant</li>
+                <li>✅ Get to know the name of the Disease</li>
+                <li>❗ Take necessary actions</li>
+            </ul>
+        </div>
+        <div class="right">
+            <h2>Upload Plant Image</h2>
+            <form action="/predict" method="post" enctype="multipart/form-data" onsubmit="showloading()">
+                <input type="file" name="image" class="upload">
+                <br>
+                <br>
+                <input type="submit" value="Predict">
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p>Developed by Chandrabhushan</p>
+    </footer>
+</body>
+</html>
